@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FetchInfoService} from '../fetch-info.service';
 
 @Component({
   selector: 'app-viewable-area',
@@ -11,9 +12,11 @@ export class ViewableAreaComponent implements OnInit {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 
+  //initialize variable in constructor for handling http requests 
   constructor() { }
 
   ngOnInit(): void {
+    //subscribe to FetchInfoServive to access the right data
   }
 
 }
