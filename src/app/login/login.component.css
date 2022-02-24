@@ -1,0 +1,13 @@
+.page-center {
+    width: 50%;
+    margin: 0 auto;
+    padding-top:40px;
+}
+
+form {
+    width: 50%;
+    margin:0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}

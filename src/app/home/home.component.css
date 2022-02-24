@@ -1,0 +1,10 @@
+/* styles for side menu nav and viewable area*/
+mat-drawer {
+    width: 200px;
+}
+mat-drawer-container {
+    min-height: 100vh;
+}
+
+
+

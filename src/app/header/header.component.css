@@ -1,0 +1,24 @@
+mat-card {
+    border-radius: 0px;
+    background-color: #90CAF9;
+}
+
+.logo-banner-left {
+    width:50%;
+}
+
+.logo-banner-right {
+    width: 50%;
+}
+
+.logo-banner div {
+    display: inline-block;
+}
+
+.banner-menu {
+    float:right;
+}
+
+.logo-banner-left div {
+    float: left;
+}

@@ -1,0 +1,7 @@
+#error-central {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-size: 30px;
+}

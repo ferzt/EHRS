@@ -1,0 +1,36 @@
+<div class="page-center">
+    <mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>LOG IN</mat-card-title>
+    </mat-card-header>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content>
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" >
+   
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input matInput [type]="'text'" name="username" formControlName="username">
+                    <button mat-icon-button matSuffix type="button">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                  </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" type="button" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+              
+              <button mat-raised-button type="submit" color="primary">LOG IN</button>
+
+        </form>
+    </mat-card-content>
+    </mat-card>
+    
+    
+
+</div>
+

@@ -1,0 +1,34 @@
+<!-- Each group of menu items enclosed in mat-expansion-panel -->
+<!-- Each menu item is a button below mat-panel-title -->
+<!-- For now we can just create a menu item under any group -->
+<!-- since they will eventually be classified by role -->
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-toolbar-row>
+                    <span>Patient Search</span>
+                  </mat-toolbar-row>
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <button class="menu-buttons" mat-button routerLink="viewable" routerLinkActive="active-link">Look Up</button>
+        <button class="menu-buttons" mat-button >Edit</button>
+
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-toolbar-row>
+                    <span>Pharmacy</span>
+                    </mat-toolbar-row>
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <button class="menu-buttons" mat-button routerLink="prescription" routerLinkActive="active-link" >Order Prescription</button>
+        <button class="menu-buttons" mat-button >View Availability</button>
+    </mat-expansion-panel>
+</mat-accordion>

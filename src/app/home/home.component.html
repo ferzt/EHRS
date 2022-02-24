@@ -1,0 +1,16 @@
+<div class="home-page-main-">
+  <app-header></app-header>
+
+  <mat-drawer-container class="example-container">
+    <!-- Side Menu Navigation-->
+    <mat-drawer mode="side" opened>
+      <app-menu></app-menu>
+    </mat-drawer>
+
+    <!-- Viewable Area-->
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+    
+</div>

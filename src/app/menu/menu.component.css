@@ -1,0 +1,12 @@
+.menu-buttons {
+    width: 100%;
+    text-align: left;
+}
+
+mat-expansion-panel-header {
+    width: 100%;
+}
+
+.active-link {
+    color: #FFCC80;
+}
