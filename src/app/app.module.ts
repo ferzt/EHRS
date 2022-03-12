@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { ViewableAreaComponent } from './viewable-area/viewable-area.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/viewable-visitationrecord.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HeaderComponent,
     ViewableAreaComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ViewableVisitationrecordComponent
   ],
   imports: [
     BrowserModule,
