@@ -5,13 +5,17 @@ import { HomeComponent } from './home/home.component';
 import { ViewableAreaComponent } from './viewable-area/viewable-area.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/viewable-visitationrecord.component';
+import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
+import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
   { path: 'home', component: HomeComponent, children: [
     { path: 'viewable', component: ViewableAreaComponent },
-    {path: 'visitation-record', component: ViewableVisitationrecordComponent}
+    {path: 'visitation-record', component: ViewableVisitationrecordComponent},
+    {path: 'visitation-queue', component: ViewableVisitationqueueComponent},
+    {path: 'checkout-patient', component: ViewableVisitationcheckoutComponent}
   ]},
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page

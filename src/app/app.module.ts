@@ -13,6 +13,8 @@ import { ViewableAreaComponent } from './viewable-area/viewable-area.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/viewable-visitationrecord.component';
+import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
+import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
     ViewableAreaComponent,
     MenuComponent,
     PageNotFoundComponent,
-    ViewableVisitationrecordComponent
+    ViewableVisitationrecordComponent,
+    ViewableVisitationqueueComponent,
+    ViewableVisitationcheckoutComponent
   ],
   imports: [
     BrowserModule,

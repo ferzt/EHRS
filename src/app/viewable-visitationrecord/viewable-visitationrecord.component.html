@@ -1,1 +1,57 @@
-<p>viewable-visitationrecord works!</p>
+<div class="pageTitle">
+    <br />
+    <h2>Create New Visitation Record</h2>
+</div>
+
+<br/><br/>
+<div class="recordForm">
+
+    <form class="newRecord" #visitationForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+
+        <mat-form-field class="patientName">
+            <mat-label>Patient Name</mat-label>
+            <input type="text" required #patientName="ngModel"
+                [class.is-invlaid]="patientName.invalid && patientName.touched"
+                class="form-control"
+                placeholder="Find Patient"
+                aria-label="Patient Name"
+                name="patientName"
+                matInput
+                [(ngModel)]="formModel.patientID"
+                [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let name of filteredNames | async" [value]="name">
+                {{name}}
+              </mat-option>
+            </mat-autocomplete>
+        </mat-form-field> 
+
+        <mat-form-field class="visitDate" >
+            <mat-label>Choose Visit Date</mat-label>
+            <input matInput [(ngModel)]="formModel.visitDate" 
+                [class.is-invlaid]="visitDate.invalid && visitDate.touched"
+                required #visitDate="ngModel"
+                type="datetime-local" 
+                name="visitDate" 
+                placeholder="start date" >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> 
+
+        <mat-form-field class="visitReason">
+            <mat-label>Visit Reason</mat-label>
+            <textarea matInput [(ngModel)]="formModel.visitReason" 
+                [class.is-invlaid]="visitReason.invalid && visitReason.touched"
+                required #visitReason="ngModel"
+                name="visitReason" 
+                placeholder="Ex. Patient is feeling...">
+            </textarea>
+        </mat-form-field>
+
+        <button mat-raised-button [disabled]="visitationForm.form.invalid"
+            type="submit">Submit New Record</button>
+        <br/>
+    </form>
+
+
+</div>
