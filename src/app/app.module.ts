@@ -16,7 +16,6 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
