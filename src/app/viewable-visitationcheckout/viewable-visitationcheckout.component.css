@@ -1,0 +1,32 @@
+.mat-table {
+    width: 100%;
+    background-color:#fafafa;
+  }
+  .mat-form-field {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .mat-header-cell, .mat-sort-header, .mat-header-row {
+    font-weight: bold;
+    font-size: 14px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h2 { 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+    font-size: 24px;
+  }
