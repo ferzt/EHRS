@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/viewable-visitationrecord.component';
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
+import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ViewableVisitationcheckoutComponent } from './viewable-visitationchecko
     PageNotFoundComponent,
     ViewableVisitationrecordComponent,
     ViewableVisitationqueueComponent,
-    ViewableVisitationcheckoutComponent
+    ViewableVisitationcheckoutComponent,
+    ViewablePatientcheckoutComponent
   ],
   imports: [
     BrowserModule,

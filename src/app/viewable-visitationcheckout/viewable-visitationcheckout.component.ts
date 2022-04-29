@@ -69,7 +69,7 @@ export class ViewableVisitationcheckoutComponent implements OnInit {
 
   viewRecord(row) {
     console.log("CLICKED")
-    this.router.navigate(['/home/visitation-record'], { queryParams: { id: row.patientId } });
+    this.router.navigate(['/home/checkout'], { queryParams: { id: row.patientId } });
   }
 }
 

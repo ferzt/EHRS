@@ -1,0 +1,70 @@
+h2 { 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+    font-size: 24px;
+}
+
+.mat-subheader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.checkout {
+    display: flex;
+}
+
+.patientInfo {
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 25%;
+}
+
+.mat-table {
+    width: 100%;
+    background-color:#fafafa;
+  }
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-header-cell, .mat-sort-header, .mat-header-row {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.treatmentBill {
+    width: 40%;
+    margin-top: 2%;
+}
+
+.patientDetail {
+    padding-bottom: 50px;
+}
+
+::ng-deep .mat-list .mat-list-item .mat-line{
+    word-wrap: break-word;
+   white-space: pre-wrap;
+}
+
+.totalCostRow {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.finalizeCheckout {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mat-raised-button {
+    background-color: #90CAF9;
+    width: 25%;
+}

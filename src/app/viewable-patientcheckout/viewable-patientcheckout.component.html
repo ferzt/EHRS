@@ -1,0 +1,75 @@
+<div class="pageTitle">
+    <br />
+    <h2>Patient Final Checkout</h2>
+</div>
+  
+<div class="checkout">
+    <div class="patientInfo">
+
+        <div class="patientDetail">
+            <mat-list>
+                <div mat-subheader>Patient Name</div>
+                <mat-divider></mat-divider>
+                <mat-list-item *ngFor="let folder of folders">
+                    <div mat-line>{{folder.name}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+        <div class="patientDetail">
+            <mat-list>
+                <div mat-subheader>Visit Date</div>
+                <mat-divider></mat-divider>
+                <mat-list-item *ngFor="let folder of folders">
+                    <div mat-line>{{folder.visitDate}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+        <div class="patientDetail">
+            <mat-list>
+                <div mat-subheader>Visit Reason</div>
+                <mat-divider></mat-divider>
+                <br/><br/>
+                <mat-list-item *ngFor="let folder of folders">
+                    <div mat-line>{{folder.visitReason}}</div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+
+    <div class="treatmentBill">
+        
+        <table mat-table [dataSource]="dataSource" matSort>
+    
+            <ng-container matColumnDef="patientTreatment">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Treatment </th>
+            <td mat-cell *matCellDef="let row"> {{row.patientTreatment}} </td>
+            <td mat-footer-cell *matFooterCellDef> Total </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Treatment Quantity </th>
+            <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+        
+            <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Treatment Cost </th>
+            <td mat-cell *matCellDef="let row"> {{row.cost | currency}} </td>
+            <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-footer-row *matFooterRowDef="displayedColumns" class="totalCostRow"></tr>
+        </table>
+
+    </div>
+</div>
+
+<div class="finalizeCheckout">
+    <button mat-raised-button type="submit" (click)="onSubmit()">Finalize Payment</button>
+    <br/>
+</div>
+  
