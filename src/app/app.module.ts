@@ -16,6 +16,13 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
+import { ViewableMedicalrecordsDemographicsComponent } from './viewable-medicalrecords-demographics/viewable-medicalrecords-demographics.component';
+import { ViewableMedicalrecordsVitalsComponent } from './viewable-medicalrecords-vitals/viewable-medicalrecords-vitals.component';
+import { ViewableMedicalrecordsMedicationsComponent } from './viewable-medicalrecords-medications/viewable-medicalrecords-medications.component';
+import { ViewableMedicalrecordsLabsComponent } from './viewable-medicalrecords-labs/viewable-medicalrecords-labs.component';
+import { ViewableMedicalrecordsDiagnosisComponent } from './viewable-medicalrecords-diagnosis/viewable-medicalrecords-diagnosis.component';
+import { ViewableMedicalrecordsTreatmentComponent } from './viewable-medicalrecords-treatment/viewable-medicalrecords-treatment.component';
+import { ViewableMedicalrecordsImagingComponent } from './viewable-medicalrecords-imaging/viewable-medicalrecords-imaging.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,14 @@ import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/vie
     ViewableVisitationrecordComponent,
     ViewableVisitationqueueComponent,
     ViewableVisitationcheckoutComponent,
-    ViewablePatientcheckoutComponent
+    ViewablePatientcheckoutComponent,
+    ViewableMedicalrecordsDemographicsComponent,
+    ViewableMedicalrecordsVitalsComponent,
+    ViewableMedicalrecordsMedicationsComponent,
+    ViewableMedicalrecordsLabsComponent,
+    ViewableMedicalrecordsDiagnosisComponent,
+    ViewableMedicalrecordsTreatmentComponent,
+    ViewableMedicalrecordsImagingComponent
   ],
   imports: [
     BrowserModule,
