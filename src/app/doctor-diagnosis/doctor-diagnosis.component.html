@@ -21,7 +21,21 @@
 </div>
 
 <div class="orderPrescription">
-    <button mat-raised-button type="submit">Order Prescription
-    </button>
+    <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Order Prescription</button>
+    <br/>
+</div>
+
+<div class="orderRadiology">
+    <button mat-raised-button type="submit" (click)="onSubmitRadiology()">Order Radiology Scan</button>
+    <br/>
+</div>
+
+<div class="orderLabTest">
+    <button mat-raised-button type="submit" (click)="onSubmitLabTest()">Order Lab Test</button>
+    <br/>
+</div>
+
+<div class="submitDiagnosis">
+    <button mat-raised-button type="submit" (click)="onSubmitDiagnosis()">Submit Diagnosis</button>
     <br/>
 </div>
