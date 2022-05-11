@@ -1,0 +1,26 @@
+<div class="pageTitle">
+    <br />
+    <h2>Order Radiology Scan</h2>
+</div>
+
+<div class="radiology">
+    <div class="radiologySelect">
+        <label for="Radiology">Select Scan:</label>
+        <select name ="Radiology" id="Radiology">
+            <option value="RadiologyScan">Scan</option>
+        </select>
+        <br/>
+    </div>
+    <div class="clinic">
+        <label for="Clinic">Select Clinic:</label>
+        <select name ="Clinic" id="Clinic">
+            <option value="ClinicName">Clinic</option>
+        </select>
+        <br/>
+    </div>
+</div>
+
+<div class="submitOrder">
+    <button mat-raised-button type="submit" (click)="onSubmitRadiology()">Submit Order</button>
+    <br/>
+</div>

@@ -1,0 +1,26 @@
+<div class="pageTitle">
+    <br />
+    <h2>Order Prescription</h2>
+</div>
+
+<div class="prescription">
+    <div class="prescriptionSelect">
+        <label for="Prescription">Select Prescription:</label>
+        <select name ="Prescription" id="Prescription">
+            <option value="PrescriptionCode">Prescription Code</option>
+        </select>
+        <br/>
+    </div>
+    <div class="pharmacy">
+        <label for="Pharmacy">Select Pharmacy:</label>
+        <select name ="Pharmacy" id="Pharmacy">
+            <option value="PharmacyName">Pharmacy</option>
+        </select>
+        <br/>
+    </div>
+</div>
+
+<div class="submitOrder">
+    <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Submit Order</button>
+    <br/>
+</div>
