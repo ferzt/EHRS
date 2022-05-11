@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-order-prescription',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorOrderPrescriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onSubmitPrescription() {
+    this.router.navigate(['/home/diagnosis']);
+  }
 }
