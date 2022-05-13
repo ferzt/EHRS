@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,6 +23,9 @@ import { ViewableMedicalrecordsLabsComponent } from './viewable-medicalrecords-l
 import { ViewableMedicalrecordsDiagnosisComponent } from './viewable-medicalrecords-diagnosis/viewable-medicalrecords-diagnosis.component';
 import { ViewableMedicalrecordsTreatmentComponent } from './viewable-medicalrecords-treatment/viewable-medicalrecords-treatment.component';
 import { ViewableMedicalrecordsImagingComponent } from './viewable-medicalrecords-imaging/viewable-medicalrecords-imaging.component';
+import { ViewableMedicalRecordComponent } from './viewable-medical-record/viewable-medical-record.component';
+import { ViewableMedicalRecordLookupComponent } from './viewable-medical-record-lookup/viewable-medical-record-lookup.component';
+import { ViewableMedrecSearchResultComponent } from './viewable-medrec-search-result/viewable-medrec-search-result.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +46,16 @@ import { ViewableMedicalrecordsImagingComponent } from './viewable-medicalrecord
     ViewableMedicalrecordsLabsComponent,
     ViewableMedicalrecordsDiagnosisComponent,
     ViewableMedicalrecordsTreatmentComponent,
-    ViewableMedicalrecordsImagingComponent
+    ViewableMedicalrecordsImagingComponent,
+    ViewableMedicalRecordComponent,
+    ViewableMedicalRecordLookupComponent,
+    ViewableMedrecSearchResultComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule

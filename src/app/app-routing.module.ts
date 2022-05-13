@@ -15,17 +15,24 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
+import { ViewableMedicalRecordComponent } from './viewable-medical-record/viewable-medical-record.component';
+import { ViewableMedicalRecordLookupComponent } from './viewable-medical-record-lookup/viewable-medical-record-lookup.component';
+import { ViewableMedrecSearchResultComponent } from './viewable-medrec-search-result/viewable-medrec-search-result.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
   { path: 'home', component: HomeComponent, children: [
-    { path: 'medrec-demographics', component: ViewableMedicalrecordsDemographicsComponent},
-    { path: 'medrec-vitals', component: ViewableMedicalrecordsVitalsComponent },
-    { path: 'medrec-medications', component: ViewableMedicalrecordsMedicationsComponent },
-    { path: 'medrec-labs', component: ViewableMedicalrecordsLabsComponent },
-    { path: 'medrec-diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
-    { path: 'medrec-treatment', component: ViewableMedicalrecordsTreatmentComponent },
-    { path: 'medrec-imaging', component: ViewableMedicalrecordsImagingComponent },
+    { path: 'medical-records', component: ViewableMedicalRecordComponent, children: [
+      { path: 'medrec-demographics', component: ViewableMedicalrecordsDemographicsComponent},
+      { path: 'medrec-vitals', component: ViewableMedicalrecordsVitalsComponent },
+      { path: 'medrec-medications', component: ViewableMedicalrecordsMedicationsComponent },
+      { path: 'medrec-labs', component: ViewableMedicalrecordsLabsComponent },
+      { path: 'medrec-diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
+      { path: 'medrec-treatment', component: ViewableMedicalrecordsTreatmentComponent },
+      { path: 'medrec-imaging', component: ViewableMedicalrecordsImagingComponent }
+    ]},
+    {path: 'medrec-lookup', component: ViewableMedicalRecordLookupComponent},
+    {path: 'medrec-result', component: ViewableMedrecSearchResultComponent},
     {path: 'visitation-record', component: ViewableVisitationrecordComponent},
     {path: 'visitation-queue', component: ViewableVisitationqueueComponent},
     {path: 'checkout-patient', component: ViewableVisitationcheckoutComponent},
