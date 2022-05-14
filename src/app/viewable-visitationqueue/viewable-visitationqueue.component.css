@@ -6,8 +6,14 @@
   font-size: 20px;
   text-align: center;
   width: 100%;
+
 }
 
+/* .filterSearch{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
 .mat-row .mat-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;

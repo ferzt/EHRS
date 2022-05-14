@@ -16,6 +16,7 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/vie
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
