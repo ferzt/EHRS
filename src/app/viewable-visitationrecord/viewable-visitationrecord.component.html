@@ -9,7 +9,7 @@
     <form class="newRecord" #visitationForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
 
         <mat-form-field class="patientName">
-            <mat-label>Patient Name</mat-label>
+            <mat-label>Patient Name and date of birth</mat-label>
             <input type="text" required #patientName="ngModel"
                 [class.is-invalid]="patientName.invalid && patientName.touched"
                 class="form-control"
@@ -47,6 +47,15 @@
                 placeholder="Ex. Patient is feeling...">
             </textarea>
         </mat-form-field>
+
+        <mat-form-field class="status">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="formModel.status"
+            required #status="ngModel" 
+            (selectionChange) = "onSelectChanged($event)" >
+              <mat-option *ngFor="let status of statuses" [value] = "status">{{status}}</mat-option>
+            </mat-select>
+          </mat-form-field>
 
         <button mat-raised-button [disabled]="visitationForm.form.invalid"
             type="submit">Submit New Record</button>

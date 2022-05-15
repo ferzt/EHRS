@@ -20,6 +20,7 @@ export class ViewableVisitationrecordComponent implements OnInit {
   patientid = ''; // value for setting patientID
   filteredPatients: Observable<Patient[]>;
   filteredNames: Observable<string[]>;
+  statuses: string[] = ['Waiting for Triage', 'Waiting for Doctor', 'Waiting for Payment'];
 
   formModel = new VisitationRecord(0, '', new Date(), '', 0, 0, 0, 0, '', '', '', 0);
 
@@ -53,10 +54,11 @@ export class ViewableVisitationrecordComponent implements OnInit {
 
   onSubmit() {
     this.formModel.patientID = this.patientid;
+    console.log(this.formModel);
     console.log(typeof this.formModel.visitDate);
     const visit: Visit = {
       patientid: this.formModel.patientID,
-      status: 'Waiting for Triage',
+      status: 'Waiting for triage',
       visit_reason: this.formModel.visitReason
     };
     console.log(visit);
