@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConsultationServiceService } from '../consultation-service.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-doctor-diagnosis',
@@ -8,8 +9,14 @@ import { ConsultationServiceService } from '../consultation-service.service';
   styleUrls: ['./doctor-diagnosis.component.css']
 })
 export class DoctorDiagnosisComponent implements OnInit {
-
-  constructor(private router: Router, private service: ConsultationServiceService) { }
+  public userForm:FormGroup;
+  remarks: string='';
+  doctorID = "a7afd98d-3e07-44cd-a014-8fa0ed34c9ee"
+  oldStatus = "waiting for doctor"
+  newStatus = "Waiting For Checkout"
+  constructor(private router: Router, private service: ConsultationServiceService, private fb: FormBuilder) { 
+    this.userForm = this.fb.group({remarks:''});
+  }
 
   diagnosisList: any;
   ngOnInit(){
@@ -19,7 +26,7 @@ export class DoctorDiagnosisComponent implements OnInit {
   getDataFromApi()
   {
     this.service.getDiagnosisList().subscribe(data =>{
-      console.log(data);this.diagnosisList = data;
+      this.diagnosisList = data;
     });
   }
   onSubmitPrescription() {
@@ -35,6 +42,11 @@ export class DoctorDiagnosisComponent implements OnInit {
   }
 
   onSubmitDiagnosis() {
+    this.remarks = this.userForm.get('remarks')?.value;
+    const visitData = {visit_summary: this.remarks, newStatus: this.newStatus, doctor_id: this.doctorID, status: this.oldStatus}
+    this.service.updateVisitSummary(visitData).subscribe(data => {
+      console.log("Patient sent to Checkout")
+    })
     this.router.navigate(['/home']);
   }
 }
