@@ -13,15 +13,15 @@
             <input type="text" required #patientName="ngModel"
                 [class.is-invlaid]="patientName.invalid && patientName.touched"
                 class="form-control"
-                placeholder="Find Patient"
+                placeholder="name mm/dd/yyyy"
                 aria-label="Patient Name"
                 name="patientName"
                 matInput
-                [(ngModel)]="formModel.patientID"
+                [(ngModel)]="formModel.patientID" 
                 [matAutocomplete]="auto">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let name of filteredNames | async" [value]="name">
-                {{name}}
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onPatientSelectionChanged($event)">
+              <mat-option *ngFor="let patient of filteredPatients | async" [value]="patient.namebirth" [id]="patient.patientid">
+                {{patient.namebirth}}
               </mat-option>
             </mat-autocomplete>
         </mat-form-field> 
