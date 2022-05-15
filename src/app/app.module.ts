@@ -27,6 +27,7 @@ import { DoctorDiagnosisComponent } from './doctor-diagnosis/doctor-diagnosis.co
 import { DoctorOrderPrescriptionComponent } from './doctor-order-prescription/doctor-order-prescription.component';
 import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-order-radiology.component';
 import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
 
