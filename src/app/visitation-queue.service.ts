@@ -11,7 +11,21 @@ export class VisitationQueueService {
   constructor(private http: HttpClient){}
 
   getQueue(): Observable<Entry[]>{
-    console.log(environment.visitAPI);
     return this.http.get<Entry[]>(`${environment.visitAPI}/queue`);
+  }
+
+  queueTriage(): Observable<Entry[]>{
+    return this.http.get<Entry[]>(`${environment.visitAPI}/queue/triage`);
+  }
+
+  queueDoctor(): Observable<Entry[]>{
+    return this.http.get<Entry[]>(`${environment.visitAPI}/queue/doctor`);
+  }
+
+  queuePayment(): Observable<Entry[]>{
+    return this.http.get<Entry[]>(`${environment.visitAPI}/queue/payment`);
+  }
+  queueCheckout(): Observable<Entry[]>{
+    return this.http.get<Entry[]>(`${environment.visitAPI}/queue/checkout`);
   }
 }

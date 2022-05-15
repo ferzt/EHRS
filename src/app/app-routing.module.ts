@@ -15,6 +15,7 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
+import { ViewableVisitationrecordResolver } from './viewable-visitationrecord/viewable-visitationrecord.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
@@ -26,7 +27,7 @@ const routes: Routes = [
     { path: 'medrec-diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
     { path: 'medrec-treatment', component: ViewableMedicalrecordsTreatmentComponent },
     { path: 'medrec-imaging', component: ViewableMedicalrecordsImagingComponent },
-    {path: 'visitation-record', component: ViewableVisitationrecordComponent},
+    {path: 'visitation-record', component: ViewableVisitationrecordComponent, resolve: {patients: ViewableVisitationrecordResolver}},
     {path: 'visitation-queue', component: ViewableVisitationqueueComponent},
     {path: 'checkout-patient', component: ViewableVisitationcheckoutComponent},
     {path: 'checkout', component: ViewablePatientcheckoutComponent}  ]},

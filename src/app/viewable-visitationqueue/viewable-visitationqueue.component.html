@@ -10,12 +10,12 @@
   <mat-form-field class="filterSearch">
     <mat-label>*Search Records</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John Smith" #input>
+  </mat-form-field>
+
+  <mat-form-field class="filterStatus">
     <mat-label>Status</mat-label>
-    <mat-select (selectionChange) ="applyFilter($event)" placeholder="all" >
-      <mat-option>All</mat-option>
-      <mat-option value="option1">Waiting for Triage</mat-option>
-      <mat-option value="option2">Waiting for doctor</mat-option>
-      <mat-option value="option3">Waiting for checkout</mat-option>
+    <mat-select (selectionChange) = "onSelectChanged($event)" placeholder="All" >
+      <mat-option *ngFor="let status of statuses" [value] = "status.value">{{status.name}}</mat-option>
     </mat-select>
   </mat-form-field>
 
