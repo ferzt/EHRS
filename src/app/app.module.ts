@@ -23,6 +23,10 @@ import { ViewableMedicalrecordsLabsComponent } from './viewable-medicalrecords-l
 import { ViewableMedicalrecordsDiagnosisComponent } from './viewable-medicalrecords-diagnosis/viewable-medicalrecords-diagnosis.component';
 import { ViewableMedicalrecordsTreatmentComponent } from './viewable-medicalrecords-treatment/viewable-medicalrecords-treatment.component';
 import { ViewableMedicalrecordsImagingComponent } from './viewable-medicalrecords-imaging/viewable-medicalrecords-imaging.component';
+import { DoctorDiagnosisComponent } from './doctor-diagnosis/doctor-diagnosis.component';
+import { DoctorOrderPrescriptionComponent } from './doctor-order-prescription/doctor-order-prescription.component';
+import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-order-radiology.component';
+import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -44,7 +48,11 @@ import { HttpClientModule } from '@angular/common/http';
     ViewableMedicalrecordsLabsComponent,
     ViewableMedicalrecordsDiagnosisComponent,
     ViewableMedicalrecordsTreatmentComponent,
-    ViewableMedicalrecordsImagingComponent
+    ViewableMedicalrecordsImagingComponent,
+    DoctorDiagnosisComponent,
+    DoctorOrderPrescriptionComponent,
+    DoctorOrderRadiologyComponent,
+    DoctorOrderLabtestComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
 

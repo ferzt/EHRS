@@ -1,0 +1,41 @@
+<div class="pageTitle">
+    <br />
+    <h2>Diagnosis</h2>
+</div>
+
+<div class="diagnosis">
+    <div class="diagnosisSelect">
+        <label for="Diagnosis">Select Diagnosis:</label>
+        <select name ="Diagnosis" id="Diagnosis">
+            <option *ngFor="let d of diagnosisList" [value]="d">{{d.icd19_code}}</option>
+        </select>
+        <br/>
+    </div>
+    <div class="diagnosisRemarks">
+        <form [formGroup]="userForm">
+            <label for="Remarks">Remarks/Treatment Info</label>
+            <input type="Text" id ="remarks" name="remarks" formControlName="remarks">
+        </form>
+        <br/>
+    </div>
+</div>
+
+<div class="orderPrescription">
+    <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Order Prescription</button>
+    <br/>
+</div>
+
+<div class="orderRadiology">
+    <button mat-raised-button type="submit" (click)="onSubmitRadiology()">Order Radiology Scan</button>
+    <br/>
+</div>
+
+<div class="orderLabTest">
+    <button mat-raised-button type="submit" (click)="onSubmitLabTest()">Order Lab Test</button>
+    <br/>
+</div>
+
+<div class="submitDiagnosis">
+    <button mat-raised-button type="submit" (click)="onSubmitDiagnosis()">Submit Diagnosis</button>
+    <br/>
+</div>

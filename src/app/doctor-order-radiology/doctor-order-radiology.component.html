@@ -1,0 +1,14 @@
+<div class="pageTitle">
+    <br />
+    <h2>Order Radiology Scan</h2>
+</div>
+
+<div class="radiology">
+    <div class="radiologySelect">
+        <form [formGroup]="userForm">
+            <label for="Radiology">Scan:</label>
+            <input type="text" id="order_name" name="order_name" formControlName="order_name"><br>
+        </form>
+        <button mat-raised-button type="submit" (click)="onSubmitRadiology()">Submit Order</button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="pageTitle">
+    <br />
+    <h2>Order Lab Test</h2>
+</div>
+
+<div class="labTest">
+    <div class="labTestSelect">
+        <form [formGroup]="userForm">
+            <label for="LabTest">Test:</label>
+            <input type="text" id="order_name" name="order_name" formControlName="order_name"><br>
+        </form>
+        <button mat-raised-button type="submit" (click)="onSubmitLabTest()">Submit Order</button>
+    </div>
+</div>

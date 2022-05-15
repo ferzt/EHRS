@@ -1,0 +1,14 @@
+<div class="pageTitle">
+    <br />
+    <h2>Order Prescription</h2>
+</div>
+
+<div class="prescription">
+    <div class="prescriptionSelect">
+        <form [formGroup]="userForm">
+            <label for="prescription">Medication:</label>
+            <input type="text" id="order_name" name="order_name" formControlName="order_name"><br>
+        </form>
+        <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Submit Order</button>
+    </div>
+</div>
