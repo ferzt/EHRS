@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConsultationServiceService } from '../consultation-service.service';
 
 @Component({
   selector: 'app-doctor-diagnosis',
@@ -8,11 +9,19 @@ import { Router } from '@angular/router';
 })
 export class DoctorDiagnosisComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: ConsultationServiceService) { }
 
-  ngOnInit(): void {
+  diagnosisList: any;
+  ngOnInit(){
+    this.getDataFromApi();
   }
   
+  getDataFromApi()
+  {
+    this.service.getDiagnosisList().subscribe(data =>{
+      console.log(data);this.diagnosisList = data;
+    });
+  }
   onSubmitPrescription() {
     this.router.navigate(['/home/order-prescription']);
   }
