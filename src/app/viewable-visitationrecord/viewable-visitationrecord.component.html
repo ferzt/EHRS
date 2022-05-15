@@ -11,7 +11,7 @@
         <mat-form-field class="patientName">
             <mat-label>Patient Name</mat-label>
             <input type="text" required #patientName="ngModel"
-                [class.is-invlaid]="patientName.invalid && patientName.touched"
+                [class.is-invalid]="patientName.invalid && patientName.touched"
                 class="form-control"
                 placeholder="name mm/dd/yyyy"
                 aria-label="Patient Name"
