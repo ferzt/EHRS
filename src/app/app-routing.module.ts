@@ -19,6 +19,7 @@ import { DoctorDiagnosisComponent } from './doctor-diagnosis/doctor-diagnosis.co
 import { DoctorOrderPrescriptionComponent } from './doctor-order-prescription/doctor-order-prescription.component';
 import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-order-radiology.component';
 import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
+import {DoctorNurseViewVisitationComponent} from './doctornurse-view-visitation/doctornurse-view-visitation.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
@@ -35,6 +36,7 @@ const routes: Routes = [
     {path: 'checkout-patient', component: ViewableVisitationcheckoutComponent},
     {path: 'checkout', component: ViewablePatientcheckoutComponent},
     {path: 'diagnosis', component: DoctorDiagnosisComponent},
+    {path: 'doctornurse-view-visitation', component: DoctorNurseViewVisitationComponent},
     {path: 'order-prescription', component: DoctorOrderPrescriptionComponent},
     {path: 'order-radiology', component: DoctorOrderRadiologyComponent},
     {path: 'order-lab-test', component: DoctorOrderLabtestComponent}  ]},
