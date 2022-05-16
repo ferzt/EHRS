@@ -1,9 +1,20 @@
 <mat-tab-group mat-align-tabs="center">
     <a></a>
-    <mat-tab label="First" (click)='changeRecordDisplay("medrec-demographics")'>
+    <mat-tab label="Demographics" (click)='changeRecordDisplay("medrec-demographics")'>
         <app-viewable-medicalrecords-demographics></app-viewable-medicalrecords-demographics>
     </mat-tab>
-    <mat-tab label="Second"></mat-tab>
+    <mat-tab label="Vitals">
+        <app-viewable-medicalrecords-vitals></app-viewable-medicalrecords-vitals>
+    </mat-tab>
+    <mat-tab label="Diagnosis">
+        <app-viewable-medicalrecords-diagnosis></app-viewable-medicalrecords-diagnosis>
+    </mat-tab>
+    <mat-tab label="Medications">
+        <app-viewable-medicalrecords-medications></app-viewable-medicalrecords-medications>
+    </mat-tab>
+    <mat-tab label="Treatment">
+        <app-viewable-medicalrecords-treatment></app-viewable-medicalrecords-treatment>
+    </mat-tab>
   
   </mat-tab-group>
 
@@ -14,4 +25,4 @@
 <button class="menu-buttons" mat-button routerLink="medrec-diagnosis" routerLinkActive="active-link" >Diagnosis</button>
 <button class="menu-buttons" mat-button routerLink="medrec-treatment" routerLinkActive="active-link" >Treatment</button>
 <button class="menu-buttons" mat-button routerLink="medrec-imaging" routerLinkActive="active-link" >Imaging</button> -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

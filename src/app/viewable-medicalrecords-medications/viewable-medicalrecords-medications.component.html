@@ -1,1 +1,19 @@
-<p>viewable-medicalrecords-medications works!</p>
+<mat-grid-list cols="2" rowHeight="1:0.5" *ngIf="showResults"> 
+    <mat-grid-tile>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Order Date: {{patientMedications[pageTracker].order_date}} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Prescription</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientMedications[pageTracker].order_name}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+        </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    </mat-grid-tile>
+</mat-grid-list>
+<p *ngIf="!showResults">Patient has no medication history</p>
+<mat-paginator (page)="handlePageEvent($event)" [length]="numPages" [pageSizeOptions]="[1]" aria-label="Select page">
+</mat-paginator>
+
+

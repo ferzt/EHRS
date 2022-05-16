@@ -1,24 +1,29 @@
 export class Demographics {
-    patient_id:number
-    first_name:String
-    middle_initial:String
-    last_name:String
-    date_of_birth:String
-    home_phone:String
-    address_id:String
-    height:number
-    weight:number
-    nok_first_name:String
-    nok_last_name:String
-    nok_mobile_phone:String
-    mobile_phone:String
-    work_phone:String
-    insurance_id:String
-    creating_date:Date
-    streetname1:String
-    streetname2:String
-    zipcode:String
-    city:String
-    state:String
+    patientid: string;
+    height?: number;
+    weight?: number;
+    firstname?: string;
+    lastname?: string;
+    gender?: string;
+    outpatient?: boolean;
+    creationdate: Date;
+    dateofbirth?: string;
+    middleinitial?: string;
+    email?: string;
+    homephone?: string;
+    mobilephone?: string;
+    workphone?: string;
+    insurance_companyName?: string;
+    insurance_memberId?: string;
+    insurance_groupNumber?: string;
+    streetname1?: string;
+    city?: string;
+    state?: string;
+    zipcode?: string;
+    country?: string;
+    streetname2?: string;
+    nok_mobilephone?: string;
+    nok_firstname?: string;
+    nok_lastname?: string;
 
 }

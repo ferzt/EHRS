@@ -23,13 +23,13 @@ const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
   { path: 'home', component: HomeComponent, children: [
     { path: 'medical-records', component: ViewableMedicalRecordComponent, children: [
-      { path: 'medrec-demographics', component: ViewableMedicalrecordsDemographicsComponent},
-      { path: 'medrec-vitals', component: ViewableMedicalrecordsVitalsComponent },
-      { path: 'medrec-medications', component: ViewableMedicalrecordsMedicationsComponent },
-      { path: 'medrec-labs', component: ViewableMedicalrecordsLabsComponent },
-      { path: 'medrec-diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
-      { path: 'medrec-treatment', component: ViewableMedicalrecordsTreatmentComponent },
-      { path: 'medrec-imaging', component: ViewableMedicalrecordsImagingComponent }
+      { path: 'demographics', component: ViewableMedicalrecordsDemographicsComponent},
+      { path: 'vitals', component: ViewableMedicalrecordsVitalsComponent },
+      { path: 'medications', component: ViewableMedicalrecordsMedicationsComponent },
+      { path: 'labs', component: ViewableMedicalrecordsLabsComponent },
+      { path: 'diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
+      { path: 'treatment', component: ViewableMedicalrecordsTreatmentComponent },
+      { path: 'imaging', component: ViewableMedicalrecordsImagingComponent }
     ]},
     {path: 'medrec-lookup', component: ViewableMedicalRecordLookupComponent},
     {path: 'medrec-result', component: ViewableMedrecSearchResultComponent},

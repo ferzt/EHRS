@@ -6,13 +6,13 @@
         <mat-list role="list">
             <mat-list-item role="listitem">Patient Information</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item role="listitem">First Name: {{testUserDemographics.first_name}}</mat-list-item>
-            <mat-list-item role="listitem">Middle Initial: {{testUserDemographics.middle_initial}}</mat-list-item>
-            <mat-list-item role="listitem">Last Name: {{testUserDemographics.last_name}}</mat-list-item>
-            <mat-list-item role="listitem">Date of Birth: {{testUserDemographics.date_of_birth}}</mat-list-item>
-            <mat-list-item role="listitem">Home Phone: {{testUserDemographics.home_phone}}</mat-list-item>
-            <mat-list-item role="listitem">Home Phone: {{testUserDemographics.height}}</mat-list-item>
-            <mat-list-item role="listitem">Home Phone: {{testUserDemographics.weight}}</mat-list-item>
+            <mat-list-item role="listitem">First Name: {{testUserDemographics[0].firstname}}</mat-list-item>
+            <mat-list-item role="listitem">Middle Initial: {{testUserDemographics[0].middleinitial}}</mat-list-item>
+            <mat-list-item role="listitem">Last Name: {{testUserDemographics[0].lastname}}</mat-list-item>
+            <mat-list-item role="listitem">Date of Birth: {{testUserDemographics[0].dateofbirth}}</mat-list-item>
+            <mat-list-item role="listitem">Home Phone: {{testUserDemographics[0].homephone}}</mat-list-item>
+            <mat-list-item role="listitem">Height: {{testUserDemographics[0].height}}</mat-list-item>
+            <mat-list-item role="listitem">Weight: {{testUserDemographics[0].weight}}</mat-list-item>
             
         </mat-list>
     </mat-grid-tile>
@@ -20,16 +20,16 @@
         <mat-list role="list">
             <mat-list-item role="listitem">Residence Information</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item role="listitem">Street: {{testUserDemographics.streetname1}}</mat-list-item>
-            <mat-list-item role="listitem">Apt: {{testUserDemographics.streetname2}}</mat-list-item>
-            <mat-list-item role="listitem">Zip Code: {{testUserDemographics.zipcode}}</mat-list-item>
-            <mat-list-item role="listitem">City: {{testUserDemographics.city}}</mat-list-item>
-            <mat-list-item role="listitem">State: {{testUserDemographics.state}}</mat-list-item>  
+            <mat-list-item role="listitem">Street: {{testUserDemographics[0].streetname1}}</mat-list-item>
+            <mat-list-item role="listitem">Apt: {{testUserDemographics[0].streetname2}}</mat-list-item>
+            <mat-list-item role="listitem">Zip Code: {{testUserDemographics[0].zipcode}}</mat-list-item>
+            <mat-list-item role="listitem">City: {{testUserDemographics[0].city}}</mat-list-item>
+            <mat-list-item role="listitem">State: {{testUserDemographics[0].state}}</mat-list-item>  
             <mat-list-item role="listitem">Next of Kin Information</mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item role="listitem">First Name: {{testUserDemographics.nok_first_name}}</mat-list-item>
-            <mat-list-item role="listitem">Last Name: {{testUserDemographics.nok_last_name}}</mat-list-item>
-            <mat-list-item role="listitem">Mobile: {{testUserDemographics.nok_mobile_phone}}</mat-list-item> 
+            <mat-list-item role="listitem">First Name: {{testUserDemographics[0].nok_firstname}}</mat-list-item>
+            <mat-list-item role="listitem">Last Name: {{testUserDemographics[0].nok_lastname}}</mat-list-item>
+            <mat-list-item role="listitem">Mobile: {{testUserDemographics[0].nok_mobilephone}}</mat-list-item> 
         </mat-list>
     </mat-grid-tile>
     <mat-grid-tile></mat-grid-tile>

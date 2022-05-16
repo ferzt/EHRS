@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Vitals} from '../vitals';
 
 @Component({
   selector: 'app-viewable-medical-record',
@@ -15,7 +16,7 @@ export class ViewableMedicalRecordComponent implements OnInit {
 
   changeRecordDisplay(url) {
     console.log(url);
-    this.route.navigate(["./medrec-demographics"]);
+    this.route.navigate([url]);
   }
 
 }

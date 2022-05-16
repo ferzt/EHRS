@@ -49,7 +49,7 @@ import { ViewableMedrecSearchResultComponent } from './viewable-medrec-search-re
     ViewableMedicalrecordsImagingComponent,
     ViewableMedicalRecordComponent,
     ViewableMedicalRecordLookupComponent,
-    ViewableMedrecSearchResultComponent
+    ViewableMedrecSearchResultComponent,
   ],
   imports: [
     BrowserModule,
