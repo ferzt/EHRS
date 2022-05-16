@@ -1,1 +1,33 @@
-<p>viewable-medicalrecords-vitals works!</p>
+<mat-grid-list cols="2" rowHeight="1:0.8">
+    <mat-grid-tile>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Visit Date: {{patientVitals[pageTracker].visit_date}} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Systolic</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientVitals[pageTracker].systolic}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Diastolic</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientVitals[pageTracker].diastolic}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Temperature</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientVitals[pageTracker].temperature}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Blood Oxygen</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientVitals[pageTracker].blood_oxygen}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Pulse</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientVitals[pageTracker].pulse}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+        </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator (page)="handlePageEvent($event)" [length]="numPages" [pageSizeOptions]="[1]" aria-label="Select page">
+</mat-paginator>
+

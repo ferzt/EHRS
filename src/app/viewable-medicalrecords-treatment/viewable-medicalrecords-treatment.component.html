@@ -1,1 +1,21 @@
-<p>viewable-medicalrecords-treatment works!</p>
+<mat-grid-list cols="2" rowHeight="1:0.5" *ngIf="showResults">
+    <mat-grid-tile>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Procedure Date: {{patientProcedure[pageTracker].order_date}} </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Procedure Name</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientProcedure[pageTracker].order_name}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+            <mat-grid-list cols="2" rowHeight="4:1">
+                <mat-grid-tile><mat-card>Reason</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{patientProcedure[pageTracker].result}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+        </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    </mat-grid-tile>
+</mat-grid-list>
+<p *ngIf="!showResults">Patient has no treatment history</p>
+<mat-paginator (page)="handlePageEvent($event)" [length]="numPages" [pageSizeOptions]="[1]" aria-label="Select page">
+</mat-paginator>

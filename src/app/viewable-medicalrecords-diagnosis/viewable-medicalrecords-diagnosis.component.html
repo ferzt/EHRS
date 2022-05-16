@@ -1,1 +1,25 @@
-<p>viewable-medicalrecords-diagnosis works!</p>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Visit Date</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="3" rowHeight="1:1">
+                <mat-grid-tile><mat-card>{{testMedicalRecord[currPage].visit_date}}</mat-card></mat-grid-tile>
+                <mat-grid-tile><mat-card>{{testMedicalRecord[currPage].status}}</mat-card></mat-grid-tile>
+            </mat-grid-list>
+        </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Physician Information</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-grid-list cols="3" rowHeight="1:1">
+                <mat-grid-tile ><img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"></mat-grid-tile>
+            </mat-grid-list>
+           
+            
+        </mat-list>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator (page)="handlePageEvent($event)" [length]="numPages" [pageSizeOptions]="[1]" aria-label="Select page">
+</mat-paginator>
