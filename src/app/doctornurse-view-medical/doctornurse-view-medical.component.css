@@ -1,0 +1,26 @@
+h2 { 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+    font-size: 24px;
+}
+
+.orderPrescription {
+    margin-top: 3%;
+}
+
+.orderRadiology {
+    margin-top: 1%;
+}
+
+.orderLabTest {
+    margin-top: 1%;
+}
+
+.submitDiagnosis {
+    margin-top: 3%;
+}
+
+.mat-raised-button {
+    background-color: #90CAF9;
+    width: 25%;
+}
