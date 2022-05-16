@@ -1,0 +1,18 @@
+.doctorLandingBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pageTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.doctorReceivePatient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
