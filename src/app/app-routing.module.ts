@@ -22,6 +22,10 @@ import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-o
 import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
 import { DoctorNurseViewVisitationComponent } from './doctornurse-view-visitation/doctornurse-view-visitation.component';
 import { DoctorNurseViewMedicalComponent } from './doctornurse-view-medical/doctornurse-view-medical.component';
+import { DoctorLandingComponent } from './doctor-landing/doctor-landing.component';
+import { DoctorOverwiewComponent } from './doctor-overwiew/doctor-overwiew.component';
+import { NurseLandingComponent } from './nurse-landing/nurse-landing.component';
+import { NurseOverwiewComponent } from './nurse-overwiew/nurse-overwiew.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
@@ -42,7 +46,11 @@ const routes: Routes = [
     {path: 'doctornurse-view-medical', component: DoctorNurseViewMedicalComponent},
     {path: 'order-prescription', component: DoctorOrderPrescriptionComponent},
     {path: 'order-radiology', component: DoctorOrderRadiologyComponent},
-    {path: 'order-lab-test', component: DoctorOrderLabtestComponent}  ]},
+    {path: 'order-lab-test', component: DoctorOrderLabtestComponent},
+    {path: 'nurselanding', component: NurseLandingComponent},
+    {path: 'doctorlanding', component: DoctorLandingComponent},
+    {path: 'DoctorOverview', component: DoctorOverwiewComponent},
+    {path: 'NurseOverview', component: NurseOverwiewComponent}  ]},
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 ];
