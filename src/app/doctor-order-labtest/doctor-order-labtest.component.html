@@ -4,23 +4,11 @@
 </div>
 
 <div class="labTest">
-    <div class="testSelect">
-        <label for="Test">Select Test:</label>
-        <select name ="Test" id="Test">
-            <option value="TestName">Test Name</option>
-        </select>
-        <br/>
+    <div class="labTestSelect">
+        <form [formGroup]="userForm">
+            <label for="LabTest">Test:</label>
+            <input type="text" id="order_name" name="order_name" formControlName="order_name"><br>
+        </form>
+        <button mat-raised-button type="submit" (click)="onSubmitLabTest()">Submit Order</button>
     </div>
-    <div class="lab">
-        <label for="Lab">Select Lab:</label>
-        <select name ="Lab" id="Lab">
-            <option value="LabName">Lab</option>
-        </select>
-        <br/>
-    </div>
-</div>
-
-<div class="submitOrder">
-    <button mat-raised-button type="submit" (click)="onSubmitLabTest()">Submit Order</button>
-    <br/>
 </div>

@@ -7,14 +7,14 @@
     <div class="diagnosisSelect">
         <label for="Diagnosis">Select Diagnosis:</label>
         <select name ="Diagnosis" id="Diagnosis">
-            <option value="ICD10">ICD10</option>
+            <option *ngFor="let d of diagnosisList" [value]="d">{{d.icd19_code}}</option>
         </select>
         <br/>
     </div>
     <div class="diagnosisRemarks">
-        <form>
-            <label for="remarks">Remarks/Treatment Info</label>
-            <input type="Text" id ="remarks">
+        <form [formGroup]="userForm">
+            <label for="Remarks">Remarks/Treatment Info</label>
+            <input type="Text" id ="remarks" name="remarks" formControlName="remarks">
         </form>
         <br/>
     </div>

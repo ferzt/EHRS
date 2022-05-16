@@ -9,19 +9,19 @@
     <form class="newRecord" #visitationForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
 
         <mat-form-field class="patientName">
-            <mat-label>Patient Name</mat-label>
+            <mat-label>Patient Name and date of birth</mat-label>
             <input type="text" required #patientName="ngModel"
-                [class.is-invlaid]="patientName.invalid && patientName.touched"
+                [class.is-invalid]="patientName.invalid && patientName.touched"
                 class="form-control"
-                placeholder="Find Patient"
+                placeholder="name mm/dd/yyyy"
                 aria-label="Patient Name"
                 name="patientName"
                 matInput
-                [(ngModel)]="formModel.patientID"
+                [(ngModel)]="formModel.patientID" 
                 [matAutocomplete]="auto">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let name of filteredNames | async" [value]="name">
-                {{name}}
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onPatientSelectionChanged($event)">
+              <mat-option *ngFor="let patient of filteredPatients | async" [value]="patient.namebirth" [id]="patient.patientid">
+                {{patient.namebirth}}
               </mat-option>
             </mat-autocomplete>
         </mat-form-field> 
@@ -47,6 +47,14 @@
                 placeholder="Ex. Patient is feeling...">
             </textarea>
         </mat-form-field>
+
+        <mat-form-field class="status">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="formModel.status"
+            required #status="ngModel" >
+              <mat-option *ngFor="let status of statuses" [value] = "status">{{status}}</mat-option>
+            </mat-select>
+          </mat-form-field>
 
         <button mat-raised-button [disabled]="visitationForm.form.invalid"
             type="submit">Submit New Record</button>

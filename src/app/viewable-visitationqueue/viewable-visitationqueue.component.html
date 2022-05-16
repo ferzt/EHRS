@@ -7,21 +7,28 @@
 
 <div class="queue">
 
-  <mat-form-field >
+  <mat-form-field class="filterSearch">
     <mat-label>*Search Records</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John Smith" #input>
+  </mat-form-field>
+
+  <mat-form-field class="filterStatus">
+    <mat-label>Status</mat-label>
+    <mat-select (selectionChange) = "onSelectChanged($event)" placeholder="All" >
+      <mat-option *ngFor="let status of statuses" [value] = "status.value">{{status.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <table mat-table [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="patientName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Patient Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.patientName}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.patient_name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="visitDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Visit Date </th>
-      <td mat-cell *matCellDef="let row"> {{row.visitDate}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.visit_date}} </td>
     </ng-container>
 
     <ng-container matColumnDef="nurse">

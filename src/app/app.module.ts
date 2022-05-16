@@ -30,6 +30,10 @@ import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order
 import { ViewableMedicalRecordComponent } from './viewable-medical-record/viewable-medical-record.component';
 import { ViewableMedicalRecordLookupComponent } from './viewable-medical-record-lookup/viewable-medical-record-lookup.component';
 import { ViewableMedrecSearchResultComponent } from './viewable-medrec-search-result/viewable-medrec-search-result.component';
+import { NurseLandingComponent } from './nurse-landing/nurse-landing.component';
+import { DoctorLandingComponent } from './doctor-landing/doctor-landing.component';
+import { DoctorOverwiewComponent } from './doctor-overwiew/doctor-overwiew.component';
+import { NurseOverwiewComponent } from './nurse-overwiew/nurse-overwiew.component';
 
 @NgModule({
   declarations: [
@@ -58,15 +62,21 @@ import { ViewableMedrecSearchResultComponent } from './viewable-medrec-search-re
     ViewableMedicalRecordComponent,
     ViewableMedicalRecordLookupComponent,
     ViewableMedrecSearchResultComponent,
+    NurseLandingComponent,
+    DoctorLandingComponent,
+    DoctorOverwiewComponent,
+    NurseOverwiewComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
 

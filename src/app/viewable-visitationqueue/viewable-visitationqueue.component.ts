@@ -2,68 +2,39 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
-
-export interface UserData {
-  patientId: string;
-  patientName: string;
-  visitDate: string;
-  nurse: string;
-  doctor: string;
-  status: string;
-}
+import { first } from 'rxjs/operators';
+import { Entry } from 'src/app/_visitmodels/entry';
+import { VisitationQueueService } from '../visitation-queue.service';
 
 /** Constants used to fill up our data base. */
-const Statuses: string[] = [
-  'Waiting for Triage',
-  'Waiting for Doctor',
-  'Waiting for Checkout',
-];
-const PatientNames: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Thomas',
-  'Elizabeth',
-];
-
-const Nurses: string[] = [
-  'Jackie',
-  'Frank',
-]
-
-const Doctors: string[] = [
-  'Bob',
-  'Austin',
-]
+interface Status {
+  value: string;
+  name: string;
+};
 
 @Component({
   selector: 'app-viewable-visitationqueue',
   templateUrl: './viewable-visitationqueue.component.html',
   styleUrls: ['./viewable-visitationqueue.component.css']
 })
-export class ViewableVisitationqueueComponent implements AfterViewInit {
+export class ViewableVisitationqueueComponent implements OnInit{
+  // options for drop down box
+  statuses: Status[] = [
+    {value: '1', name: 'All'},
+    {value: '2', name: 'Waiting for Triage'},
+    {value: '3', name: 'Waiting for Doctor'},
+    {value: '4', name: 'Waiting for Payment'},
+    {value: '5', name: 'Ready for Checkout'}
+  ];
 
   displayedColumns: string[] = ['patientName', 'visitDate', 'nurse', 'doctor', 'status'];
-  dataSource: MatTableDataSource<UserData>;
+  dataSource: MatTableDataSource<Entry> ;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private router: Router) { 
-    // Create 100 users
-    const users = Array.from({length: 25}, (_, k) => createNewUser(k + 1));
-    this.dataSource = new MatTableDataSource(users);
-  }
+  constructor(private visitationQueueService: VisitationQueueService, private router: Router) {}
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    this.loadQueue(); // load the queue upon initialization
   }
 
   applyFilter(event: Event) {
@@ -75,32 +46,39 @@ export class ViewableVisitationqueueComponent implements AfterViewInit {
     }
   }
 
-  viewRecord(row) {
-    console.log("CLICKED")
-    this.router.navigate(['/home/visitation-record'], { queryParams: { id: row.patientId } });
+  viewRecord(row) {// view Record upon a click
+    console.log('Clicked');
+    this.router.navigate(['/home/visitation-record'], { queryParams: { id: row.patientid } });
+    // need code for user checkup
   }
-}
 
-  /** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-  PatientNames[Math.round(Math.random() * (PatientNames.length - 1))] +
-    ' ' +
-    PatientNames[Math.round(Math.random() * (PatientNames.length - 1))].charAt(0) +
-    '.';
+  onSelectChanged(event) {
+    console.log(event);
+    switch (event.value){
+      case '1':
+        this.loadQueue();
+        break;
+      case '2':
+        this.visitationQueueService.queueTriage()
+        .pipe(first()).subscribe(data => this.dataSource = new MatTableDataSource(data));
+        break;
+      case '3':
+        this.visitationQueueService.queueDoctor()
+        .pipe(first()).subscribe(data => this.dataSource = new MatTableDataSource(data));
+        break;
+      case '4':
+        this.visitationQueueService.queuePayment()
+      // tslint:disable-next-line:align
+        .pipe(first()).subscribe(data => this.dataSource = new MatTableDataSource(data));
+        break;
+      case '4':
+        this.visitationQueueService.queueCheckout()
+        .pipe(first()).subscribe(data => this.dataSource = new MatTableDataSource(data));
+        break;
+    }
+  }
 
-  var testDate = new Date(2022, 4, 25);
-  var testDate2 = new Date();
-  var date = new Date(testDate.getTime() + Math.random() * (testDate2.getTime() - testDate.getTime()));
-  var formatdate = date.getFullYear()  +'/' + (date.getMonth()) + '/'+date.getDate() + ' - ' + date.getHours() + ":" + date.getMinutes();
-
-  return {
-    patientId: id.toString(),
-    patientName: name,
-    visitDate: formatdate,
-    nurse: Nurses[Math.round(Math.random() * (Nurses.length - 1))],
-    doctor: Doctors[Math.round(Math.random() * (Doctors.length - 1))],
-    status: Statuses[Math.round(Math.random() * (Statuses.length - 1))],
-  };
-
+  private loadQueue(){
+    this.visitationQueueService.getQueue().pipe(first()).subscribe(data => this.dataSource = new MatTableDataSource(data));
+  }
 }

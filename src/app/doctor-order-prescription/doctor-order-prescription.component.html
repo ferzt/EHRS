@@ -5,22 +5,10 @@
 
 <div class="prescription">
     <div class="prescriptionSelect">
-        <label for="Prescription">Select Prescription:</label>
-        <select name ="Prescription" id="Prescription">
-            <option value="PrescriptionCode">Prescription Code</option>
-        </select>
-        <br/>
+        <form [formGroup]="userForm">
+            <label for="prescription">Medication:</label>
+            <input type="text" id="order_name" name="order_name" formControlName="order_name"><br>
+        </form>
+        <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Submit Order</button>
     </div>
-    <div class="pharmacy">
-        <label for="Pharmacy">Select Pharmacy:</label>
-        <select name ="Pharmacy" id="Pharmacy">
-            <option value="PharmacyName">Pharmacy</option>
-        </select>
-        <br/>
-    </div>
-</div>
-
-<div class="submitOrder">
-    <button mat-raised-button type="submit" (click)="onSubmitPrescription()">Submit Order</button>
-    <br/>
 </div>
