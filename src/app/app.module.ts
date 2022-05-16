@@ -27,7 +27,10 @@ import { DoctorDiagnosisComponent } from './doctor-diagnosis/doctor-diagnosis.co
 import { DoctorOrderPrescriptionComponent } from './doctor-order-prescription/doctor-order-prescription.component';
 import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-order-radiology.component';
 import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
-import { HttpClientModule } from '@angular/common/http';
+import { NurseLandingComponent } from './nurse-landing/nurse-landing.component';
+import { DoctorLandingComponent } from './doctor-landing/doctor-landing.component';
+import { DoctorOverwiewComponent } from './doctor-overwiew/doctor-overwiew.component';
+import { NurseOverwiewComponent } from './nurse-overwiew/nurse-overwiew.component';
 
 @NgModule({
   declarations: [
@@ -52,17 +55,19 @@ import { HttpClientModule } from '@angular/common/http';
     DoctorDiagnosisComponent,
     DoctorOrderPrescriptionComponent,
     DoctorOrderRadiologyComponent,
-    DoctorOrderLabtestComponent
+    DoctorOrderLabtestComponent,
+    NurseLandingComponent,
+    DoctorLandingComponent,
+    DoctorOverwiewComponent,
+    NurseOverwiewComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [
 
