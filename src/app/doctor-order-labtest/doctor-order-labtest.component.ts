@@ -1,3 +1,6 @@
+//This file describes the lab test order component, nearly identical to all the other order components
+//thought about combining them all into one component and working from there but 
+//I put too much work into figuring out how to do this to give up the original idea
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';

@@ -1,3 +1,4 @@
+//This component describes the radiology order functionality
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -28,6 +29,7 @@ export class DoctorOrderRadiologyComponent implements OnInit {
   doctorID = "a7afd98d-3e07-44cd-a014-8fa0ed34c9ee"
   patientID = '713ebf64-3aa2-4fcc-8987-4b24e832a894'
   getDataFromAPI(){
+    //could not get data to give me useable output, so left it hard coded, serves as a proof of concept at least
     this.service.getDoctorID().subscribe(data => {
       //this.doctorID = data;
       console.log(data)

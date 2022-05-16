@@ -1,3 +1,4 @@
+//This file describes the order prescription component
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConsultationServiceService } from '../consultation-service.service';
