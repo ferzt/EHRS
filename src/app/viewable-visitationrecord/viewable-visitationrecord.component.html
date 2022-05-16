@@ -51,8 +51,7 @@
         <mat-form-field class="status">
             <mat-label>Status</mat-label>
             <mat-select [(ngModel)]="formModel.status"
-            required #status="ngModel" 
-            (selectionChange) = "onSelectChanged($event)" >
+            required #status="ngModel" >
               <mat-option *ngFor="let status of statuses" [value] = "status">{{status}}</mat-option>
             </mat-select>
           </mat-form-field>
