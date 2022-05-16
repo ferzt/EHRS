@@ -1,3 +1,5 @@
+//This file defines the functionality of the Doctor Diagnosis Page, including submitting the diagnosis 
+//and acts as a hub for submitting vendor orders
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConsultationServiceService } from '../consultation-service.service';
