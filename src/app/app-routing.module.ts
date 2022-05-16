@@ -15,11 +15,14 @@ import { ViewableVisitationrecordComponent } from './viewable-visitationrecord/v
 import { ViewableVisitationcheckoutComponent } from './viewable-visitationcheckout/viewable-visitationcheckout.component';
 import { ViewableVisitationqueueComponent } from './viewable-visitationqueue/viewable-visitationqueue.component';
 import { ViewablePatientcheckoutComponent } from './viewable-patientcheckout/viewable-patientcheckout.component';
-import { ViewableVisitationrecordResolver } from './viewable-visitationrecord/viewable-visitationrecord.resolver';
 import { DoctorDiagnosisComponent } from './doctor-diagnosis/doctor-diagnosis.component';
 import { DoctorOrderPrescriptionComponent } from './doctor-order-prescription/doctor-order-prescription.component';
 import { DoctorOrderRadiologyComponent } from './doctor-order-radiology/doctor-order-radiology.component';
 import { DoctorOrderLabtestComponent } from './doctor-order-labtest/doctor-order-labtest.component';
+import { NurseLandingComponent } from './nurse-landing/nurse-landing.component';
+import { DoctorLandingComponent } from './doctor-landing/doctor-landing.component';
+import { DoctorOverwiewComponent } from './doctor-overwiew/doctor-overwiew.component';
+import { NurseOverwiewComponent } from './nurse-overwiew/nurse-overwiew.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:"full"},
@@ -31,14 +34,19 @@ const routes: Routes = [
     { path: 'medrec-diagnosis', component: ViewableMedicalrecordsDiagnosisComponent},
     { path: 'medrec-treatment', component: ViewableMedicalrecordsTreatmentComponent },
     { path: 'medrec-imaging', component: ViewableMedicalrecordsImagingComponent },
-    {path: 'visitation-record', component: ViewableVisitationrecordComponent, resolve: {patients: ViewableVisitationrecordResolver}},
+    {path: 'visitation-record', component: ViewableVisitationrecordComponent},
     {path: 'visitation-queue', component: ViewableVisitationqueueComponent},
     {path: 'checkout-patient', component: ViewableVisitationcheckoutComponent},
     {path: 'checkout', component: ViewablePatientcheckoutComponent},
     {path: 'diagnosis', component: DoctorDiagnosisComponent},
     {path: 'order-prescription', component: DoctorOrderPrescriptionComponent},
     {path: 'order-radiology', component: DoctorOrderRadiologyComponent},
-    {path: 'order-lab-test', component: DoctorOrderLabtestComponent}  ]},
+    {path: 'order-lab-test', component: DoctorOrderLabtestComponent},
+    {path: 'nurselanding', component: NurseLandingComponent},
+    {path: 'doctorlanding', component: DoctorLandingComponent},
+    {path: 'DoctorOverview', component: DoctorOverwiewComponent},
+    {path: 'NurseOverview', component: NurseOverwiewComponent}
+  ]},
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }  // Wildcard route for a 404 page
 ];
