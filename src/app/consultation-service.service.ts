@@ -12,6 +12,14 @@ export class ConsultationServiceService {
     return this.http.get('http://localhost:3000/DiagnosisList')
   }
 
+  getVisitationHistory(patientid:string){
+    return this.http.get('http://localhost:3000/VisitationHistory', {params:{patientid:patientid}})
+  }
+  
+  getMedicalRecord(patientid:string){
+    return this.http.get('http://localhost:3000/MedicalRecord', {params:{patientid:patientid}})
+  }
+
   getDoctorID(){
     return this.http.get('http://localhost:3000/doctorID')
   }
